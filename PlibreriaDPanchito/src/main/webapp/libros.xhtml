@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Libros:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>LIBROS</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel for="idlibros" value="Codigo "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idlibros"
+				styleClass="form-control" value="#{librosController.i.idlibros}"
+				required="true" />
+
+			<h:outputLabel for="text" value="Nombre de Libro"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="text"
+				styleClass="form-control" value="#{librosController.i.nombreLibro}"
+				maxlength="30" required="true" />
+
+			<h:outputLabel for="date" value="Fecha de ingreso "
+				styleClass="control-label" />
+			<p:calendar id="date" pattern="dd/MM/yyyy"
+				value="#{librosController.i.fechaIngreso}" showOn="button"
+				timeZone="UTC" required="true">
+			</p:calendar>
+			<br />
+			<h:outputLabel for="value" value="Numero de Serie"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="value" styleClass="form-control"
+				value="#{librosController.i.numSerie}" maxlength="30"
+				required="true" />
+
+			<h:outputLabel for="number" value="Numero de Edicion"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="number" styleClass="form-control"
+				value="#{librosController.i.numEdicion}" maxlength="30"
+				required="true" />
+			<h:outputLabel for="text1" value="Idioma"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="text1"
+				styleClass="form-control" value="#{librosController.i.idiomaLibro}"
+				maxlength="30" required="true" />
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{librosController.insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listlibros?faces-redirect=true" />
+
+
+			<p:commandButton value="Cancelar"
+				action="listlibros?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+			<p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
