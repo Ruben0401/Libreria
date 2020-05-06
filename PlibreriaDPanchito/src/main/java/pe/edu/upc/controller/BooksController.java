@@ -9,36 +9,36 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import pe.edu.upc.entity.libros;
-import pe.edu.upc.serviceinterface.IlibrosService;
+import pe.edu.upc.entity.Books;
+import pe.edu.upc.serviceinterface.BooksService;
 
 
 @Named
 @RequestScoped
-public class librosController implements Serializable {
+public class BooksController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	// variables
 	@Inject
-	private IlibrosService iService;
+	private BooksService iService;
 	
 
-	private libros i;
+	private Books i;
 	
-	List<libros> listalibros;
+	List<Books> listalibros;
 
 	// constructor
 	@PostConstruct
 	public void init() {
-		this.listalibros = new ArrayList<libros>();
-		this.i = new libros();
+		this.listalibros = new ArrayList<Books>();
+		this.i = new Books();
 		this.listarlibros();
 	}
 
 	// Metodos
 	public String newlibros() {
-		this.setI(new libros());
+		this.setI(new Books());
 		return "libros.xhtml";
 	}
 
@@ -68,27 +68,27 @@ public class librosController implements Serializable {
 
 	
 	// getters y setters
-	public IlibrosService getiService() {
+	public BooksService getiService() {
 		return iService;
 	}
 
-	public void setiService(IlibrosService iService) {
+	public void setiService(BooksService iService) {
 		this.iService = iService;
 	}
 
-	public libros getI() {
+	public Books getI() {
 		return i;
 	}
 
-	public void setI(libros i) {
+	public void setI(Books i) {
 		this.i = i;
 	}
 
-	public List<libros> getListalibros() {
+	public List<Books> getListalibros() {
 		return listalibros;
 	}
 
-	public void setListalibros(List<libros> listalibros) {
+	public void setListalibros(List<Books> listalibros) {
 		this.listalibros = listalibros;
 	}
 

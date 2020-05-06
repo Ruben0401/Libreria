@@ -12,8 +12,8 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "libros")
-public class libros implements Serializable {
+@Table(name = "Books")
+public class Books implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -30,12 +30,12 @@ public class libros implements Serializable {
 	
 	@Column(name ="idiomaLibro", nullable = false, length = 50)
 	private String idiomaLibro;
-	public libros() {
+	public Books() {
 		super();
 		
 	}
 
-	public libros(int idlibros, String nombreLibro, Date fechaIngreso, int numEdicion, int numSerie,
+	public Books(int idlibros, String nombreLibro, Date fechaIngreso, int numEdicion, int numSerie,
 			String idiomaLibro) {
 		super();
 		this.idlibros = idlibros;

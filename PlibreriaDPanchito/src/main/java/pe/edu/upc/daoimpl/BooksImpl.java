@@ -9,10 +9,10 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import pe.edu.upc.daointerface.IlibrosDao;
-import pe.edu.upc.entity.libros;
+import pe.edu.upc.daointerface.BooksDao;
+import pe.edu.upc.entity.Books;
 
-public class librosImpl implements IlibrosDao, Serializable {
+public class BooksImpl implements BooksDao, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -21,7 +21,7 @@ public class librosImpl implements IlibrosDao, Serializable {
 
 	@Transactional
 	@Override
-	public void insert(libros i) {
+	public void insert(Books i) {
 		try {
 			em.persist(i);
 		} catch (Exception e) {
@@ -32,11 +32,11 @@ public class librosImpl implements IlibrosDao, Serializable {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<libros> list() {
-		List<libros> lista = new ArrayList<libros>();
+	public List<Books> list() {
+		List<Books> lista = new ArrayList<Books>();
 		try {
 			Query q = em.createQuery("from libros i");
-			lista = (List<libros>) q.getResultList();
+			lista = (List<Books>) q.getResultList();
 		} catch (Exception e) {
 			System.out.println("Error en DAO list libroImpl");
 		}
