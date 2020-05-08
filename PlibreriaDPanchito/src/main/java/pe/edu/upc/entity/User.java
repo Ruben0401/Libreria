@@ -29,12 +29,15 @@ public class User implements Serializable{
 	
 	@Column(name ="Function", nullable = false, length = 50)
 	private String Function;
-
+	
+	@Column(name ="Password", nullable = false, length = 50)
+	private String Password;
+	
 	public User() {
 		super();
 		
 	}
-	public User(int idUser, String name, String lastName, int dNI, String email, String function) {
+	public User(int idUser, String name, String lastName, int dNI, String email, String function, String password) {
 		super();
 		this.idUser = idUser;
 		Name = name;
@@ -42,8 +45,15 @@ public class User implements Serializable{
 		DNI = dNI;
 		this.email = email;
 		Function = function;
+	    Password = password;
 	}
 	
+	public String getPassword() {
+		return Password;
+	}
+	public void setPassword(String password) {
+		Password = password;
+	}
 	//get set
 	public int getIdUser() {
 		return idUser;

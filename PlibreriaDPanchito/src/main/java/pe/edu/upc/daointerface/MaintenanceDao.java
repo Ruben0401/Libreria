@@ -1,5 +1,10 @@
 package pe.edu.upc.daointerface;
+import java.util.List;
 
-public class MaintenanceDao {
+import pe.edu.upc.entity.Maintenance;
 
+public interface MaintenanceDao {
+	public void insert(Maintenance i);
+
+	public List<Maintenance> list();
 }

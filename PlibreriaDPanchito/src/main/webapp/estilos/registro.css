@@ -1,7 +1,7 @@
 body{
 	margin: 0;
 	padding: 0;
-	background: url(img/background.jpg) no-repeat center top;
+	background: url(../img/background.jpg) no-repeat center top;
 	background-size: cover;
 	font-family: sans-serif;
 	height: 100vh;
@@ -85,6 +85,20 @@ margin-bottom: 20px;
 	top: calc(95% + 1px);
 	left: 25%;
 
+}
+
+.login-box-btn .btn-primary{
+	border:none;
+	background: #FCE45C;
+	outline: none;
+	height: 40px;
+	width: 50%;
+	color:#000;
+	font-size: 18px;
+	border-radius: 20px;
+	position: absolute; 
+	top: calc(95% + 1px);
+	left: 25%;
 }
 .login-box a{
 

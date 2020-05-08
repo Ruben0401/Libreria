@@ -7,6 +7,10 @@
 		<jta-data-source>java:/libreriaDS</jta-data-source>
 		<class>pe.edu.upc.entity.Books</class>
 		<class>pe.edu.upc.entity.User</class>
+		<class>pe.edu.upc.entity.Author</class>
+		<class>pe.edu.upc.entity.Example</class>
+		<class>pe.edu.upc.entity.Loan</class>
+		<class>pe.edu.upc.entity.Maintenance</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

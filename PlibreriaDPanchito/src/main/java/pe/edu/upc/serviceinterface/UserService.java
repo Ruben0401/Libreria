@@ -1,5 +1,10 @@
 package pe.edu.upc.serviceinterface;
 
-public class UserService {
+import java.util.List;
+import pe.edu.upc.entity.User;
 
+public interface UserService {
+	public void insert(User i);
+	
+	public List<User>list ();
 }

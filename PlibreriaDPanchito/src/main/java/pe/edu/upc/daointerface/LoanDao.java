@@ -1,5 +1,10 @@
 package pe.edu.upc.daointerface;
+import java.util.List;
 
-public class LoanDao {
+import pe.edu.upc.entity.Loan;
 
+public interface LoanDao {
+	public void insert(Loan i);
+
+	public List<Loan> list();
 }

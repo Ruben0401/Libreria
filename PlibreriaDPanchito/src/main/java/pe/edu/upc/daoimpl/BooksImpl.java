@@ -35,7 +35,7 @@ public class BooksImpl implements BooksDao, Serializable {
 	public List<Books> list() {
 		List<Books> lista = new ArrayList<Books>();
 		try {
-			Query q = em.createQuery("from libros i");
+			Query q = em.createQuery("from Books i");
 			lista = (List<Books>) q.getResultList();
 		} catch (Exception e) {
 			System.out.println("Error en DAO list libroImpl");
